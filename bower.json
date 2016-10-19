@@ -1,0 +1,12 @@
+{
+  "name": "n-teaser-collection",
+  "homepage": "https://github.com/financial-times/n-teaser-collection",
+  "description": "A set of layouts for groups of n-teasers",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

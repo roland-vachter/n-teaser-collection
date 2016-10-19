@@ -1,0 +1,15 @@
+{
+  "name": "@financial-times/n-teaser-collection",
+  "version": "0.0.0",
+  "description": "A set of layouts for groups of n-teasers",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Financial-Times/n-teaser-collection.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.9",
+    "npm-prepublish": "^1.2.1"
+  }
+}
