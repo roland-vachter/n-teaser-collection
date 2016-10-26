@@ -1,0 +1,13 @@
+<ul class="o-teaser-collection o-teaser-collection--stream">
+	{{#slice teasers offset=0 limit=6}}
+		<li class="o-teaser-collection__item">
+			{{>n-teaser/templates/light size="horizontal"}}
+		</li>
+	{{/slice}}
+	{{#outputBlock 'custom-space'}}{{/outputBlock}}
+	{{#slice teasers offset=6 limit=49}}
+		<li class="o-teaser-collection__item">
+			{{>n-teaser/templates/light size="horizontal"}}
+		</li>
+	{{/slice}}
+</ul>
