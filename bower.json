@@ -10,6 +10,6 @@
     "tests"
   ],
   "dependencies": {
-    "n-teaser": "0.0.9"
+    "n-teaser": "master"
   }
 }
