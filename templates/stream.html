@@ -1,13 +1,50 @@
+{{!-- 
+TODO: Tidy this mess up
+ - decouple stream-page elements/classes so we can use this elsewhere (myFT pages)
+ - move all the ifEquals and unlessEquals logic out of the views, only allowing
+   either a teaser template, or a custom template, where the custom template is
+   passed from the controller
+--}}
+{{#if items}}
 <ul class="o-teaser-collection o-teaser-collection--stream">
-	{{#slice teasers offset=0 limit=6}}
-		<li class="o-teaser-collection__item">
-			{{>n-teaser/templates/light size="horizontal"}}
+	{{#each items}}
+		<li class="o-teaser-collection__item o-grid-row">
+			<div data-o-grid-colspan="hide L3">
+				{{#unlessEquals template 'advert'}}
+				{{#unlessEquals template 'tour-tip'}}
+					<div class="stream-card__date">
+						<time data-o-component="o-date" class="o-date o-teaser__timestamp" data-o-date-format="date-only" datetime="{{lastPublished}}">{{#dateformat "dddd, d mmmm, yyyy"}}{{lastPublished}}{{/dateformat}}</time>
+					</div>
+				{{/unlessEquals}}
+				{{/unlessEquals}}
+			</div>
+			<div data-o-grid-colspan="12 L9">
+				<div data-stream-item data-id="{{id}}" class="stream-item {{#ifEquals template 'card-open-in-stream'}} stream-item--openable {{/ifEquals}} {{#if highlight}} stream-item--new-highlight {{/if}} {{#if animate}} stream-item--new-animate {{/if}} {{#if bleed}} stream-item--bleed {{/if}}">
+					{{#ifEquals template 'custom-fragment'}}
+						{{> custom-fragment}}
+					{{/ifEquals}}
+					{{#ifEquals template 'card-open-in-stream'}}
+						{{> card-open-in-stream}}
+					{{/ifEquals}}
+					{{#ifEquals template 'advert'}}
+						{{> advert}}
+					{{/ifEquals}}
+					{{#ifEquals template 'card'}}
+						{{> n-teaser/templates/heavy mods='small'}}
+					{{/ifEquals}}
+					{{#ifEquals template 'tour-tip'}}
+						<div class="tour-tip-stream-container tour-tip-stream-container--position-{{position}}">
+							{{> n-ui/tour-tip/template data=../tourTip}}
+						</div>
+					{{/ifEquals}}
+				</div>
+			</div>
 		</li>
-	{{/slice}}
-	{{#outputBlock 'custom-space'}}{{/outputBlock}}
-	{{#slice teasers offset=6 limit=49}}
-		<li class="o-teaser-collection__item">
-			{{>n-teaser/templates/light size="horizontal"}}
-		</li>
-	{{/slice}}
-</ul>
+	{{/each}}
+	</ul>
+{{else}}
+	{{#outputBlock 'noResultsMessage'}}
+		<p>No results</p>
+	{{/outputBlock}}
+{{/if}}
+
