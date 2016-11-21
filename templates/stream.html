@@ -6,7 +6,8 @@ TODO: Tidy this mess up
    passed from the controller
 --}}
 {{#if items}}
-<ul class="o-teaser-collection o-teaser-collection--stream">
+{{> n-teaser-collection/templates/partials/heading headingModifiers='half-width'}}
+<ul class="o-teaser-collection__list">
 	{{#each items}}
 		<li class="o-teaser-collection__item o-grid-row">
 			<div data-o-grid-colspan="hide L3">
