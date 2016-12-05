@@ -8,8 +8,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "n-teaser": "^0.2.0"
-  }
+  ]
 }
