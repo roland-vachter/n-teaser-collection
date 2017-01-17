@@ -1,8 +1,8 @@
 {{#if title}}
 	{{#if hideTitle}}
-		<div id="suggested-reads__title" class="n-util-visually-hidden">{{title}}</div>
+		<div class="n-util-visually-hidden">{{title}}</div>
 	{{else}}
-		<div id="suggested-reads__title" class="o-teaser-collection__heading{{#headingModifiers}} o-teaser-collection__heading--{{this}}{{/headingModifiers}}">
+		<div class="o-teaser-collection__heading{{#headingModifiers}} o-teaser-collection__heading--{{this}}{{/headingModifiers}}">
 			{{#if url}}
 				<a href="{{url}}" data-trackable="section-title">{{title}}</a>
 			{{else}}
