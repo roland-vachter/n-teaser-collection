@@ -1,12 +1,12 @@
 {{#if title}}
 	{{#if hideTitle}}
-		<div class="n-util-visually-hidden">{{title}}</div>
+		<div class="n-util-visually-hidden">{{{title}}}</div>
 	{{else}}
 		<{{#if headingTag}}{{headingTag}}{{else}}div{{/if}} class="o-teaser-collection__heading{{#headingModifiers}} o-teaser-collection__heading--{{this}}{{/headingModifiers}}"{{#if ariaLabel}} aria-label="{{ariaLabel}}"{{/if}}>
 			{{#if url}}
-				<a href="{{url}}" data-trackable="section-title">{{title}}</a>
+				<a href="{{url}}" data-trackable="section-title">{{{title}}}</a>
 			{{else}}
-				{{title}}
+				{{{title}}}
 			{{/if}}
 		</{{#if headingTag}}{{headingTag}}{{else}}div{{/if}}>
 	{{/if}}
