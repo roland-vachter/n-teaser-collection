@@ -6,7 +6,7 @@ TODO: Tidy this mess up
    passed from the controller
 --}}
 {{#if items}}
-{{> n-teaser-collection/templates/partials/heading headingModifiers='half-width'}}
+{{> n-teaser-collection-v2/templates/partials/heading headingModifiers='half-width'}}
 <ul class="o-teaser-collection__list">
 	{{#each items}}
 		<li class="o-teaser-collection__item o-grid-row">
@@ -31,7 +31,7 @@ TODO: Tidy this mess up
 						{{> advert}}
 					{{/ifEquals}}
 					{{#ifEquals template 'card'}}
-						{{> n-teaser/templates/heavy mods='small'}}
+						{{> n-teaser-v2/templates/heavy mods='small'}}
 					{{/ifEquals}}
 					{{#ifEquals template 'tour-tip'}}
 						<div class="tour-tip-stream-container tour-tip-stream-container--position-{{position}}">

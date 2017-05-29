@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@financial-times/n-teaser": "^1.0.0"
+    "@financial-times/n-teaser-v2": "financial-times/n-teaser#migrate_v2_stream",
   },
   "devDependencies": {
     "bower": "^1.7.9",
